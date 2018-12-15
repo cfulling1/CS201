@@ -1,0 +1,83 @@
+#include<stdio.h>
+
+void chop(char *s) {
+  int i;
+  for(i=0; s[i]; i++)
+    {
+    if(s[i]=='\n')
+      {
+      s[i]=0;
+      return;
+      }
+   }
+}
+int convert(char *keyword) {
+  int i;
+  for(i=0; keyword[i]; i++)
+    {
+      {
+      if(keyword[i]>=76 && keyword[i]<=90)
+        keyword[i]=keyword[i]-65;
+      if(keywork[i]>=97 && keyword[i]<=122)
+        keyword[i]=keyword[i]-97;
+      }
+   return 0;
+   }
+}
+
+int getLetter(FILE *f) {
+  while (1) {
+    int c = fgetc(f);
+    if (c>='a' && c<='z') return c-'a';
+    if (c>='A' && c<='Z') return c-'A';
+    if (c==EOF) return -1;
+  }
+}
+
+int encipher(int ifrmt, int indx, char *keyword) {
+   ifrmt += keyword[indx];
+   ifrmt %= 26;
+   return ifrmt;
+}
+
+int main() {
+
+int ifrmt;
+int indx=0;
+while((ifrmt=getLetter())>=0)
+  {
+  c=encipher(ifrmt, indx, *keyword)
+  //get keyword
+  //get length of the keyword
+  //convert keyword to internal format
+  //get clear file name (input file) from the user
+  //clrName
+
+  FILE *ifile = fopen("alpha", "r");
+  FILE *ofile = fopen("cipher", "w");
+  int letter;
+  char keyword[];
+  printf("Enter a keyword\n");
+  scanf("%s", keyword);
+  printf("Enter file name\n");
+  fgets(array, sz, stdin); //?    
+  FILE *ifile = fopen("&name", "r");
+  FILE *ofile = fopen("cipher", "w");
+  chop(*keyword);
+  chop(*name);
+  
+  int length = 3;
+  int indx = 0;
+  while ( (letter=getLetter(ifile)) >=0) {
+     int enLet = encipher(letter, indx, keyword);
+     indx++;
+     indx %= length;
+
+     fputc(enLet+'A', ofile);
+     //output in 5 groups of 5 letters per line.
+     //fputc(' ', ofile); every 5 letters
+     //fputc('\n',ofile); every 5 groups 
+  }
+  fclose(ifile);
+  fclose(ofile);
+}

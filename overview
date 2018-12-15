@@ -1,0 +1,55 @@
+1.  A c program consists of files;
+
+    the files contain  function definitions
+                       global variables
+                       function declarations: void assign(int *n, int v);
+                       preprocessor commands:  #include<stdio.h>
+                                               #define SIZE 100
+
+2.  A function definition consists of:  
+
+          A header:   for example:  char *myIndex(const char *s, int c)
+	  which consists of:
+		       the return type of the function:  char *
+		       the function name: myIndex
+		       left parenthesis (
+		       function (formal) parameter defintions:  const char *s,  int v
+		       right  parenthesis )
+                          
+          The compound statement:
+	               left brace {
+                         the steps (statements) of the function
+		       right brace }
+
+3. A function call. First we get values for the function parameters. Example:
+
+				    char a[100];
+				    char c1;
+                                    scanf("%s %c", a, &c1);  //get the values
+
+   Finally, we get to the function call. 
+   The function myIndex is used (called) inside the printf function below:
+
+                                    printf("%s\n",  myIndex(a, c1) );
+
+   Our Function call:               myIndex(a, c1)
+
+	       A call starts with the "pass".
+               Values of the arguments (actual parameters) of the call 
+	       are passed to (stored in) the formal parameters of the definition.
+	       In our example the address that symbol a represents, is stored into parameter s.
+	       And the character code in variable c1 is stored into parameter c. 
+
+	       Then the steps of the function are executed.
+	       When a return statement is executed,
+
+	                              return some_expession;
+				      
+	       the function is stopped and the value of the function is the value of the
+	       expression.  Function myIndex returns the address of a character 
+	       found in the string a.  The type is char * . 
+
+	       Function printf expects the type char * 
+	       because the format string "%s\n". It
+	       prints the character at the address and then prints the next
+	       characters until the 0 is reached.

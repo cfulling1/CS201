@@ -1,0 +1,47 @@
+General Plan
+  get keyword from user
+  get length of keyword
+  convert keyword to internal representation
+  
+  get name of the clear file from the user
+  open clear file for input; result a filePtr for input
+  open cipher file for output; result a filePtr for output
+
+
+  internal representation: 
+    upper case:
+      The letters A, B, C, ..., Z will 
+      represented by 0, 1, 2, ..., 25
+    lower case:
+      The letters a, b, c, ..., z will 
+      represented by 0, 1, 2, ..., 25
+
+  output: each line: 5 groups of letters in groups of 5.
+
+
+C library functions:
+
+  fgets(buffer, sizeOfBuffer, stdin)
+
+  //expects two plug-in strings
+  //  a file name
+  //  and a mode
+  //returns a pointer to a FILE object
+  FILE *filePtr = fopen(fileName, "mode")
+                    where "mode" is "r"  for input
+                    and "mode" is "w" for output
+  
+  //expects a plug-in filePtr to an input file
+  //returns the character code of the next character in the file
+  fgetc(filePtr)  
+
+  //expects 2 plug-ins,
+  //an integer character code
+  //and a filePtr to an output file
+  //outputs the character code to the file
+  fputc(c, filePtr) 
+
+  int getLetter(  
+
+
+main():

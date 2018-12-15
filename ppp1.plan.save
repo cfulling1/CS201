@@ -1,0 +1,39 @@
+Requirements:
+  use: srandom and random to generate the pseudo random numbers.
+//"seed" the random number generator.
+// 3 doors labeled 0, 1, and 2
+
+change=0
+stick=0
+
+prizeDoor
+choice
+showDoor
+altChoice
+ r
+loop 1000 times:
+   use random to pick which door has the prize.
+     prizeDoor = 
+   use random to pick the Player's first choice.
+     choice = 
+   Monty Hall picks the show door, 
+          showDoor =    NOT prizeDoor, and
+                        NOT choice
+     And shows the goat to the Player.
+     And askes: Keep your choice? Or switch?
+
+     If the player is going to switch he/she           NOT choice
+        wants a door different from choice and         NOT showDoor
+        different from the showDoor.
+     So variable altChoice is assigned to be this door
+
+    Player either goes with choice or with altChoice
+    we track both strategies:
+    if choice==prizeDoor
+      stick++
+    if altChoice==prizeDoor
+      change++
+end loop
+
+print stick, change
+     
